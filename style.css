@@ -1,0 +1,139 @@
+/* Устанавливаем базовые стили для body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 16px; /* Базовый размер шрифта */
+}
+
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 1rem; /* Отступы для хедера */
+    text-align: center;
+    position: fixed; /* Фиксируем хедер */
+    top: 0; /* Располагаем его в верхней части экрана */
+    left: 0; /* Выравнивание по левому краю */
+    right: 0; /* Выравнивание по правому краю */
+    z-index: 1000; /* Увеличиваем z-index, чтобы он был выше других элементов */
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.3); /* Тень для хедера */
+}
+
+/* Добавьте отступ к основному содержимому, чтобы оно не находилось под фиксированным хедером */
+body {
+    padding-top: 4rem; /* Добавляем отступ сверху, равный высоте хедера */
+}
+
+/* Остальные стили остаются без изменений */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Распределяем элементы по краям */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    max-width: 75rem; /* 1200px */
+    margin: 0 auto; /* Центрирование */
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 14px; /* Устанавливаем размер шрифта 14px для заголовка */
+    white-space: nowrap; /* Не переносить заголовок на новую строку */
+}
+
+.contact-info {
+    margin-right: 1.25rem; /* 20px */
+    font-size: 14px; /* Устанавливаем размер шрифта 14px для контактной информации */
+    white-space: nowrap; /* Не переносить контактную информацию на новую строку */
+}
+
+.contact-info a {
+    color: #FFD700; /* Цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+p {
+    margin-top: 0.625rem; /* 10px */
+}
+
+h2 {
+    color: #007BFF;
+}
+
+section {
+    padding: 1.25rem; /* 20px */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 0.625rem; /* 10px */
+    background: #333;
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1.25rem; /* 20px */
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+    background: #FF5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.3125rem; /* 5px */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin: 0.625rem 0; /* 10px */
+    padding: 0.625rem; /* 10px */
+}
+
+button {
+    padding: 0.625rem; /* 10px */
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: row; /* Убедимся, что расположение горизонтальное */
+        justify-content: space-between; /* Распределение элементов по крайним позициям */
+        overflow: hidden; /* Скрытие переполнения */
+        padding: 0.5rem; /* Меньшие отступы на мобильных устройствах */
+    }
+    
+    .contact-info {
+        margin-right: 0; /* Убираем отступ */
+    }
+
+    .header-content h1 {
+        font-size: 14px; /* Установите размер шрифта на 14px для мобильных */
+    }
+
+    .contact-info {
+        font-size: 14px; /* Установите размер шрифта на 14px для мобильных */
+    }
+
+    /* Уменьшаем отступы для элементов в заголовке */
+    .header-content {
+        padding: 0.25rem; /* Убираем отступы на мобильных устройствах */
+    }
+}
