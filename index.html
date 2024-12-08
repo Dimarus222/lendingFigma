@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>КомпМастер</title>
+    <title>КомпМастер</title>
     <style>
         .fadeIn {
             opacity: 0;
@@ -78,7 +79,7 @@
                     <a href="#contact" class="hover:text-blue-200 transition duration-300">Контакты</a>
                     <a href="#!" id="privacyLink" class="hover:text-blue-200 transition duration-300">Политика конфиденциальности</a>
                 </div>
-                <button class="md:hidden">
+                <button id="menu-btn" class="md:hidden focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -87,6 +88,38 @@
         </nav>
     </header>
 
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-blue-600 text-white">
+        <nav class="flex flex-col space-y-4 p-4">
+            <a href="#services" class="hover:text-blue-200 transition duration-300">Услуги</a>
+            <a href="#about" class="hover:text-blue-200 transition duration-300">Обо мне</a>
+            <a href="#testimonials" class="hover:text-blue-200 transition duration-300">Отзывы</a>
+            <a href="#faq" class="hover:text-blue-200 transition duration-300">FAQ</a>
+            <a href="#gallery" class="hover:text-blue-200 transition duration-300">Галерея</a>
+            <a href="#contact" class="hover:text-blue-200 transition duration-300">Контакты</a>
+            <a href="#!" id="privacyLink" class="hover:text-blue-200 transition duration-300">Политика конфиденциальности</a>
+        </nav>
+    </div>
+
+    
+
+    <script>
+        // Скрипт для управления гамбургер-меню
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Эффект fadeIn для секций
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeIns = document.querySelectorAll('.fadeIn');
+            fadeIns.forEach(el => {
+                el.classList.add('visible');
+            });
+        });
+    </script>
     <main>
         <section class="relative h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-blue-700 text-white">
             <div class="text-center">
@@ -329,4 +362,5 @@
         });
     </script>
 </body>
-</html>            
+</html>
+  
